@@ -14,12 +14,12 @@ public class ServiceMovies {
     private static final Logger Log = LoggerFactory.getLogger(ServiceMovies.class);
     JSoupWeb dataElements = new JSoupWeb();
 
-    public Flux<String> fromIterable () {
+    public Flux<String> fromIterableReactive() {
         var movieslist = Flux.fromIterable(dataElements.titleList());
         return movieslist;
     }
 
-    public Flux<Tuple3<String, String, String>> zipMethod(){
+    public Flux<Tuple3<String, String, String>> zipReactive(){
         var movieslist = Flux.fromIterable(dataElements.titleList());
         var genreList = Flux.fromIterable(dataElements.genreList());
         var noteList = Flux.fromIterable(dataElements.noteList());

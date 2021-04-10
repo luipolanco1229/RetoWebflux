@@ -15,12 +15,12 @@ public class Controller {
 
     @GetMapping(value = "api/movies")
     public Flux<String> title(){
-        return service.fromIterable();
+        return service.fromIterableReactive();
     }
 
     @GetMapping(value = "api/movies/zip")
     public Flux<Tuple3<String, String, String>> zip(){
-         return service.zipMethod();
+         return service.zipReactive();
     }
 
 
