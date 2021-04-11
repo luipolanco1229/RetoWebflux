@@ -23,5 +23,10 @@ public class Controller {
          return service.zipReactive();
     }
 
+    @GetMapping(value = "api/movies/map")
+    public Flux<String> map(){
+        return service.mapReactive();
+    }
+
 
 }

@@ -12,7 +12,7 @@ public class WebApplication {
 
         ServiceMovies service = new ServiceMovies();
 
-        service.zipReactive();
+        service.mapReactive();
 
     }
 }

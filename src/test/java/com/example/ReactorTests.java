@@ -24,7 +24,6 @@ public class ReactorTests {
     @Test
     public void fromIterable() {
         var moviesFromIterable = serviceMovies.fromIterableReactive();
-        //Assertions.assertEquals(1,1);
         StepVerifier.create(moviesFromIterable.take(1)).expectNext("El padrino").verifyComplete();
     }
 
@@ -40,5 +39,11 @@ public class ReactorTests {
         Assertions.assertEquals("Crimen, Drama", genre);
         Assertions.assertEquals("4,6", note);
 
+    }
+
+    @Test
+    public void map(){
+        var genreIncrementMap = serviceMovies.mapReactive();
+        StepVerifier.create(genreIncrementMap.take(1)).expectNext("9.2").verifyComplete();
     }
 }
